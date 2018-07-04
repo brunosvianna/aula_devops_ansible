@@ -1,0 +1,12 @@
+---
+- name: Instala pacotes padroes
+  hosts: devops docker
+  tasks:
+    - name: Pacotes
+      apt: 
+         name: "{{ item }}"
+         update_cache: yes
+         state: absent
+      with_items:
+          - cowsay
+...
